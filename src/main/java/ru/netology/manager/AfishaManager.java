@@ -11,7 +11,10 @@ public class AfishaManager {
         return movies;
     }
 
-    public void setMoviesAmountInFeed(int moviesAmountInFeed) {
+    public AfishaManager() {
+    }
+
+    public AfishaManager(int moviesAmountInFeed) {
         this.moviesAmountInFeed = moviesAmountInFeed;
     }
 
