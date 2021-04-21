@@ -11,7 +11,8 @@ public class AfishaManager {
         this.repository = repository;
     }
 
-    public void setMovieCount(int movieCount) {
+    public AfishaManager(AfishaRepository repository, int movieCount) {
+        this.repository = repository;
         this.movieCount = movieCount;
     }
 
@@ -21,10 +22,11 @@ public class AfishaManager {
 
     public Movie[] getMoviesFeed() {
         Movie[] movies = repository.findAll();
+        int length = movieCount;
         if (movieCount > movies.length) {
-            movieCount = movies.length;
+            length = movies.length;
         }
-        Movie[] result = new Movie[movieCount];
+        Movie[] result = new Movie[length];
         for (int i = 0; i < result.length; i++) {
             int index = movies.length - i - 1;
             result[i] = movies[index];
